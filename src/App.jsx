@@ -8,12 +8,12 @@ function App() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/create">create</Link>
+        {/* <Link to="/">Home</Link> */}
+        <Link to="/">create</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/create" element={<Createpage />} />
+        {/* <Route path="/" element={<Homepage />} /> */}
+        <Route path="/" element={<Createpage />} />
       </Routes>
     </>
   );

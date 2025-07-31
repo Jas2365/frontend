@@ -81,4 +81,22 @@
       color: variables.$primaryTextColor;
     }
   }
+
+  .photo-preview {
+    width: 320px;
+    height: 240px;
+    border: 2px dashed variables.$primaryBorderColor;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$primaryBackgroundColor;
+    cursor: pointer;
+
+    .preview {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
 }

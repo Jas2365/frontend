@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTeacherStore } from "../store/teacherStore";
+import CameraUpload from "../Components/CameraUpload";
 
 const createPage = () => {
   const { addTeacher } = useTeacherStore();
@@ -53,6 +54,7 @@ const createPage = () => {
           onChange={(e) => handleChange(e)}
           value={teacher.schoolName}
         />
+        <CameraUpload />
 
         <button type="submit">Submit</button>
       </form>

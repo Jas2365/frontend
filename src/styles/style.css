@@ -91,6 +91,33 @@ body {
   background-color: rgb(7.7538461538, 47.8153846154, 160.2461538462);
   color: rgb(182.5076923077, 200.6307692308, 251.4923076923);
 }
+.form-container .photo-preview {
+  width: 320px;
+  height: 240px;
+  border: 2px dashed rgb(37.5230769231, 91.8923076923, 244.4769230769);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(7.7538461538, 47.8153846154, 160.2461538462);
+  cursor: pointer;
+}
+.form-container .photo-preview .preview {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.form-container .photo-preview .svg-camera {
+  width: 48;
+  height: 48;
+  object-view-box: 0 0 24 24;
+  fill: none;
+  stroke: #888;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .home-container {
   width: 380px;
