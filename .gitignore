@@ -27,5 +27,4 @@ dist-ssr
 .env
 
 # styles
-/src/styles/*.css
 /src/styles/*.css.map
