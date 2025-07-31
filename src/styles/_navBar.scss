@@ -1,0 +1,19 @@
+@use "variables";
+@use "mixins";
+nav {
+  @include mixins.basicModel(
+    variables.$primaryTextColor,
+    variables.$primaryColor
+  );
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  a {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 20px 13px;
+    color: variables.$primaryTextColor;
+  }
+}

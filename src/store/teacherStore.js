@@ -1,30 +1,36 @@
 import { create } from "zustand";
 import axios from "axios";
 
+const api = axios.create({
+  baseURL: `${import.meta.env.VITE_BACKEND_URL}`,
+});
+
 export const useTeacherStore = create((set) => ({
-  teachers: [],
-  loading: false,
-  error: null,
+  teachers: [{}],
 
   fetchTeachers: async () => {
-    set({ loading: true, error: null });
-    try {
-      const res = await axios.get("/api/teachers");
-      set({ teachers: res.data, loading: false });
-    } catch (err) {
-      set({ error: err.message, loading: false });
-    }
+    const res = await api.get("/api/teachers");
+    const data = res.data;
+    set({ teachers: data.data });
+
+    // try {
+    //   const res = await fetch(
+    //     `${import.meta.env.VITE_BACKEND_URL}/api/teachers`
+    //   );
+    //   const data = await res.json();
+    //   if (data.success) {
+    //     set({ teachers: data.data, loading: false });
+    //   } else {
+    //     console.error("Error: ", data.message);
+    //   }
+    // } catch (err) {
+    //   set({ error: err.message, loading: false });
+    // }
   },
 
   addTeacher: async (newTeacher) => {
-    try {
-      const res = await axios.post(
-        "http://localhost:2365/api/teachers",
-        newTeacher
-      );
-      set((state) => ({ teachers: [...state.teachers, res.data] }));
-    } catch (err) {
-      set({ error: err.message });
-    }
+    const res = await api.post("/api/teachers", newTeacher);
+    console.log("res:", res);
+    set((state) => ({ teachers: [...state.teachers, res.data.data] }));
   },
 }));

@@ -1,0 +1,12 @@
+@use "variables";
+
+@mixin basicModel($primaryTextColor, $primaryColor) {
+  width: 380px;
+  background-color: variables.$primaryColor;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(160, 160, 160, 0.2);
+  padding: 10px 20px;
+  transition: transform 0.2;
+  text-align: center;
+  color: variables.$primaryTextColor;
+}

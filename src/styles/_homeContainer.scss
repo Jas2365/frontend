@@ -1,0 +1,41 @@
+@use "variables";
+@use "mixins";
+
+.home-container {
+  @include mixins.basicModel(
+    variables.$primaryTextColor,
+    variables.$primaryColor
+  );
+
+  // width: 500px;
+  margin-top: 20px;
+
+  h1 {
+    font-size: x-large;
+    text-align: center;
+  }
+
+  .list-container {
+    padding: 12px 16px;
+    margin: auto;
+
+    .list-element {
+      @include mixins.basicModel(
+        variables.$primaryTextColor,
+        variables.$primaryColor
+      );
+
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 10px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      align-items: center;
+      gap: 10px;
+      .list-item {
+        text-align: center;
+      }
+    }
+  }
+}
