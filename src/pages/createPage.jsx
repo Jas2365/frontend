@@ -26,7 +26,7 @@ const createPage = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="kgid">First Name</label>
+        <label htmlFor="kgid">Kgid</label>
         <input
           type="text"
           id="kgid"
@@ -35,7 +35,7 @@ const createPage = () => {
           onChange={(e) => handleChange(e)}
           value={teacher.kgid}
         />
-        <label htmlFor="name">Last Name</label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
@@ -44,7 +44,7 @@ const createPage = () => {
           onChange={(e) => handleChange(e)}
           value={teacher.name}
         />
-        <label htmlFor="schoolName">Email</label>
+        <label htmlFor="schoolName">School Name</label>
         <input
           type="text"
           id="schoolName"
