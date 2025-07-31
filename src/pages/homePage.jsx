@@ -13,16 +13,17 @@ const homePage = () => {
     <div className="home-container">
       <h1>Teachers</h1>
       <div className="list-container">
-        {teachers.map((teacher) => {
-          return (
-            <List
-              key={teacher._id}
-              firstname={teacher.kgid}
-              lastname={teacher.name}
-              email={teacher.schoolName}
-            />
-          );
-        })}
+        {teachers &&
+          teachers.map((teacher, index) => {
+            return (
+              <List
+                key={index}
+                firstname={teacher.kgid}
+                lastname={teacher.name}
+                email={teacher.schoolName}
+              />
+            );
+          })}
       </div>
     </div>
   );

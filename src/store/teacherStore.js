@@ -30,7 +30,7 @@ export const useTeacherStore = create((set) => ({
 
   addTeacher: async (newTeacher) => {
     const res = await api.post("/api/teachers", newTeacher);
-    console.log("res:", res);
+    // console.log("res:", res);
     set((state) => ({ teachers: [...state.teachers, res.data.data] }));
   },
 }));
