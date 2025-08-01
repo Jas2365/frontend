@@ -9,7 +9,7 @@ function App() {
     <>
       <nav>
         {/* <Link to="/">Home</Link> */}
-        <Link to="/">create</Link>
+        <Link to="/">Teacher Attendance</Link>
       </nav>
       <Routes>
         {/* <Route path="/" element={<Homepage />} /> */}
