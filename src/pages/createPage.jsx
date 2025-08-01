@@ -10,6 +10,7 @@ const createPage = () => {
     name: "",
     schoolName: "",
   });
+  const [profileImage, setProfileImage] = useState(null);
 
   const handleChange = (e) => {
     setTeacher((prev) => ({
@@ -20,7 +21,11 @@ const createPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addTeacher(teacher);
+    const formdata = new FormData();
+    formdata.append("data", JSON.stringify(teacher));
+    formdata.append("profileImage", profileImage);
+
+    await addTeacher(formdata);
     setTeacher({ kgid: "", name: "", schoolName: "" });
   };
 
@@ -54,7 +59,7 @@ const createPage = () => {
           onChange={(e) => handleChange(e)}
           value={teacher.schoolName}
         />
-        <CameraUpload />
+        <CameraUpload onImageSelect={setProfileImage} />
 
         <button type="submit">Submit</button>
       </form>
