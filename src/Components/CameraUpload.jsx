@@ -27,10 +27,10 @@ const CameraUpload = ({ onImageSelect }) => {
       <input
         type="file"
         name="profileImage"
+        id="profileImage"
         accept="image/*"
         capture="environment"
         ref={fileInputRef}
-        style={{ display: "none" }}
         required
         onChange={handleFileChange}
       />

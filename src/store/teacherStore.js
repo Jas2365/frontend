@@ -29,12 +29,17 @@ export const useTeacherStore = create((set) => ({
   },
 
   addTeacher: async (newTeacher) => {
-    const res = await api.post("/api/teachers", newTeacher, {
-      headers: {
-        "Content-Type": "multipart/formdata",
-      },
-    });
-    console.log(res.data);
+    const res = await api.post(
+      "/api/teachers",
+      newTeacher
+      // , {
+      // headers: {
+      //   "Content-Type": "multipart/formdata",
+      // },
+      // }
+    );
+    const data = await res.data;
+    console.log(" adding data  ", data);
     alert("teacher created");
     // console.log("res:", res);
     set((state) => ({ teachers: [...state.teachers, res.data.data] }));
