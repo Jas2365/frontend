@@ -37,7 +37,7 @@ const createPage = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="kgid">Kgid</label>
         <input
-          type="text"
+          type="number"
           id="kgid"
           name="kgid"
           placeholder="enter kgid"
