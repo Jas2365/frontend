@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTeacherStore } from "../store/teacherStore";
 import CameraUpload from "../Components/CameraUpload";
+import { set } from "mongoose";
 
 const createPage = () => {
   const { addTeacher } = useTeacherStore();
@@ -27,6 +28,7 @@ const createPage = () => {
 
     await addTeacher(formdata);
     setTeacher({ kgid: "", name: "", schoolName: "" });
+    setProfileImage(null);
   };
 
   return (
