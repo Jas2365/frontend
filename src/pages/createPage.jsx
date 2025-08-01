@@ -21,6 +21,8 @@ const createPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!profileImage || !teacher.kgid || !teacher.name || !teacher.schoolName)
+      return;
     const formdata = new FormData();
     formdata.append("data", JSON.stringify(teacher));
     formdata.append("profileImage", profileImage);
