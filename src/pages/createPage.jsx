@@ -9,6 +9,8 @@ const createPage = () => {
     kgid: "",
     name: "",
     schoolName: "",
+    taluka: "",
+    cluster: "",
   });
   const [profileImage, setProfileImage] = useState(null);
 
@@ -20,15 +22,23 @@ const createPage = () => {
   };
 
   const handleSubmit = async (e) => {
+    alert("teacher created");
     e.preventDefault();
-    if (!profileImage || !teacher.kgid || !teacher.name || !teacher.schoolName)
+    if (
+      !profileImage ||
+      !teacher.kgid ||
+      !teacher.name ||
+      !teacher.schoolName ||
+      !teacher.taluka ||
+      !teacher.cluster
+    )
       return;
     const formdata = new FormData();
     formdata.append("data", JSON.stringify(teacher));
     formdata.append("profileImage", profileImage);
 
     await addTeacher(formdata);
-    setTeacher({ kgid: "", name: "", schoolName: "" });
+    setTeacher({ kgid: "", name: "", schoolName: "", taluka: "", cluster: "" });
     setProfileImage(null);
   };
 
@@ -62,6 +72,25 @@ const createPage = () => {
           onChange={(e) => handleChange(e)}
           value={teacher.schoolName}
         />
+        <label htmlFor="taluka">Taluka</label>
+        <input
+          type="text"
+          id="taluka"
+          name="taluka"
+          placeholder="enter taluka"
+          onChange={(e) => handleChange(e)}
+          value={teacher.taluka}
+        />
+        <label htmlFor="cluster">Taluka</label>
+        <input
+          type="text"
+          id="cluster"
+          name="cluster"
+          placeholder="enter cluster"
+          onChange={(e) => handleChange(e)}
+          value={teacher.cluster}
+        />
+
         <CameraUpload onImageSelect={setProfileImage} />
 
         <button type="submit">Submit</button>

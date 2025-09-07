@@ -40,7 +40,6 @@ export const useTeacherStore = create((set) => ({
     );
     const data = await res.data;
     console.log(" adding data  ", data);
-    alert("teacher created");
     // console.log("res:", res);
     set((state) => ({ teachers: [...state.teachers, res.data.data] }));
   },
