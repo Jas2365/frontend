@@ -81,7 +81,7 @@ const createPage = () => {
           onChange={(e) => handleChange(e)}
           value={teacher.taluka}
         />
-        <label htmlFor="cluster">Taluka</label>
+        <label htmlFor="cluster">Cluster</label>
         <input
           type="text"
           id="cluster"
