@@ -22,7 +22,7 @@ const createPage = () => {
   };
 
   const handleSubmit = async (e) => {
-    alert("teacher created");
+    alert("Attendance successfully");
     e.preventDefault();
     if (
       !profileImage ||
